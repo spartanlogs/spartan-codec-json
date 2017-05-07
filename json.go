@@ -6,6 +6,7 @@ import (
 
 	"github.com/spartanlogs/spartan/codecs"
 	"github.com/spartanlogs/spartan/event"
+	"github.com/spartanlogs/spartan/utils"
 )
 
 // The JSONCodec encodes/decodes an event as JSON.
@@ -15,7 +16,7 @@ func init() {
 	codecs.Register("json", newJSONCodec)
 }
 
-func newJSONCodec() (codecs.Codec, error) {
+func newJSONCodec(options utils.InterfaceMap) (codecs.Codec, error) {
 	return &JSONCodec{}, nil
 }
 
